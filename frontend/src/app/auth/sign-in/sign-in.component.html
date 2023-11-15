@@ -1,0 +1,46 @@
+<div class="sign-in-component">
+    <app-loading-spinner class="loading-spinner" *ngIf="isLoading"></app-loading-spinner>
+    <form [formGroup]="loginForm" class="form-layout" (ngSubmit)="onSubmit()">
+        <h2 class="form-title">Welcome back!</h2>
+        <div class="form-group">
+            <label for="Email">Email</label>
+            <input type="mail" class="form-input"
+                placeholder="Email"
+                id="email"
+                formControlName="email"
+    
+            >
+        </div>
+    
+        <div class="form-group">
+            <label for="Password">Password</label>
+            <input type="password" class="form-input"
+                placeholder="Password"
+                id="password"
+                formControlName="password"
+            >
+            
+        </div>
+        
+        <div class="form-group">
+            <!-- <div class="btn-group"> -->
+                <div class="btn-layout">
+                    <button (click)='navToSignUp()' type="button" routerLink='signup'
+                    class="btn left-btn">
+                       Sign Up Instead
+                   </button>                    
+                </div>
+                <div class="btn-layout">
+                    <button type="submit" class="btn right-btn">
+                        Log In
+                    </button>                   
+                </div>
+
+
+            <!-- </div> -->
+        </div>
+        
+    
+    
+    </form>
+</div>

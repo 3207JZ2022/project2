@@ -1,0 +1,46 @@
+<div class="search-bar-component">
+    <!-- <div class="search-bar-items logo-container">
+        <img class="header-logo" src={{imagePath}} routerLink="/" >
+    </div>
+     -->
+    <div class="search-bar-items search-input-container">
+        <form class="search-bar-form" (ngSubmit)="onSubmit()" autocomplete="off">
+            <input class="search-input"   
+            type="text" name="search" value="{{searchQuery}}"
+            [(ngModel)]="searchQuery"
+            >
+            <button class="search-btn" type="submit">
+                <mat-icon class="search-icon"
+                aria-hidden="false" aria-label="Example home icon" fontIcon="search"></mat-icon>
+            </button>
+        </form>
+        <div class="msg" [ngClass]="showMsg? 'msg':'msg-hide' " >
+            {{msg}}
+        </div>
+    </div>
+
+    <!-- <div class="search-bar-items">
+        <div class="expand-btn-layout">
+            <button class="expand-btn" (click)="expanded=!expanded">
+                <fa-icon  [icon]="faBars" ></fa-icon>
+            </button>
+        </div>
+        <ul class="nav-list " [ngClass]="expanded? 'expanded':'collapse'">
+            <li class="expand-list">
+                <a routerLink="/shopping-cart">
+                    Cart
+                </a>
+            </li>
+            <li class="expand-list">
+                <a routerLink="/support">
+                    Support
+                </a>
+            </li>
+            <li class="expand-list">
+                <a routerLink="/about">
+                    About
+                </a>
+            </li>
+        </ul>
+    </div> -->
+</div>

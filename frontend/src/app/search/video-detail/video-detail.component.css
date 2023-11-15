@@ -1,0 +1,97 @@
+.video-detail-component{
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    margin-bottom: 5px;
+    max-width: 1000px;
+    /* border-left: 0.2px solid  #9f9f9fa2; */
+
+}
+
+.video-text-area{
+    padding: 0px 10px;
+    max-width: 700px;
+    overflow-x: auto;
+}
+
+.video-detail-img{
+    width: 200px;
+    height: 200px;
+    min-width: 200px;
+    min-height: 200px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.rating-area{
+    padding-right: 10px;
+}
+
+.video-detail-name{
+    font-size: 20px;
+    cursor: pointer;
+    text-overflow: ellipsis;
+    overflow-x: clip;
+}
+
+.video-detail-name:hover{
+    color: rgb(250, 70, 70);
+
+}
+
+.video-detail-description{
+    overflow-y: auto;
+    height:70px;
+    text-overflow: ellipsis;
+    overflow-x: clip;
+}
+
+.rating-color{
+    color:#fbc634 ;
+}
+
+.text-area-footer{
+    position: relative;
+}
+
+.review-count{
+    font-weight:400;
+    margin-bottom:2px;
+    font-size:18px ;
+}
+
+.product-detail-price{
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
+
+.nav-btn{
+    /* position: relative; */
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 0.2px solid ;
+    color: rgb(250, 70, 70);
+    background-color: white;
+
+    
+}
+
+.nav-btn:hover{
+    color: rgb(255, 255, 255);
+    background-color: rgb(250, 70, 70);
+}
+
+
+/* .app-body{
+    padding: 0px 0px;
+    min-height: calc( 100vh - 6em);
+    background-color: white;
+    background-image: url('~src/assets/imgs/cubes.png');
+
+} */
+

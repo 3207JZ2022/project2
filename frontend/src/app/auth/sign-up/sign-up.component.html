@@ -1,0 +1,71 @@
+<div class="sign-up-component">
+
+    <form *ngIf="signupForm" [formGroup]="signupForm"  class="form-layout" (ngSubmit)="onSubmit()">
+        <h2 class="form-title">Create Your Account</h2>
+        <div class="form-group">
+            <label for="first name">First name</label>
+            <input type="text" class="form-input"
+                placeholder="First Name"
+                formControlName="firstName"
+
+            >
+        </div>
+    
+        <div class="form-group">
+            <label for="last name">Last name</label>
+            <input type="text" class="form-input"
+            placeholder="Last Name"
+            formControlName="lastName"
+                
+            >
+        </div>
+    
+        <div class="form-group">
+            <label for="Email">Email Address</label>
+            <input type="mail" class="form-input"
+                placeholder="Email"
+                formControlName="email"
+
+            >
+        </div>
+    
+        <div class="form-group">
+            <label for="Password">Create Password</label>
+            <input type="password" class="form-input"
+                placeholder="Enter Password"
+                formControlName="password"
+            >   
+            <span
+            *ngIf="!signupForm.get('password')?.valid && signupForm.get('password')?.touched"
+            class="help-block"></span>
+            <span
+            *ngIf="!signupForm.get('confirmPassword')?.valid && signupForm.get('confirmPassword')?.touched"
+            class="help-block"></span>
+        </div>
+    
+        
+        <div class="form-group">
+            <label for="Password">Confirm Password</label>
+            <input type="password" class="form-input"
+                placeholder="Confirm Password"
+                formControlName="confirmPassword"
+        >
+            
+        </div>
+        
+        <div class="form-group">
+            <div class="btn-layout">
+                <button  type="button" (click)="navToLogin()"
+                 class="btn left-btn">
+                    Sign In Instead
+                </button>
+            </div>            
+            <div class="btn-layout">
+                <button type="submit" class="btn right-btn" (click)="onSubmit()">
+                    Create Account
+                </button>
+            </div>
+        </div>
+    </form>
+    </div>
+    

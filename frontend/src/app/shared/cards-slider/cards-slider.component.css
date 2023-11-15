@@ -1,0 +1,94 @@
+.cards-slider-component{
+    position: relative;
+}
+
+.control-btn{
+    z-index: 1;
+    width: 20px;
+    height: 400px;
+    background-color: rgba(183, 183, 183, 0.2);
+    border-width: 0px;
+    transition: 0.4s;
+    position:absolute;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgba(0, 0, 0, 0.3);
+    font-size: 100px;
+}
+
+.control-btn:hover{
+    background-color: rgba(0, 0, 0, 0.7);
+    color: rgba(255, 255, 255, 0.9);
+
+}
+
+.left-btn{
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.right-btn{
+    right:0%;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.vertical-control-btn{
+    z-index: 1;
+    width: 400px;
+    height: 20px;
+    background-color: rgba(183, 183, 183, 0.2);
+    border-width: 0px;
+    transition: 0.4s;
+    position:absolute;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgba(0, 0, 0, 0.3);
+    font-size: 100px;
+}
+
+vertical-control-btn span{
+    transform: rotate(90deg);
+}
+
+.up-btn{
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.down-btn{
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    bottom: 0px;
+    position: absolute;
+}
+
+.rotate-arrow{
+    transform: rotate(90deg);
+    transform-origin: center;
+    position: relative;
+    left: 5px;
+    height: 100%;
+    display: inline-block;
+}
+
+.cards-list{
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    transition-duration: 0.4s;
+    position: relative;
+}
+
+.flex-down{
+    flex-direction: column;
+    height: 720px;
+}
+
+.cards-list-item{
+    padding: 10px;
+}
+
+ul{
+    margin-block-start: 0px;
+    padding-inline-start: 0px;
+}
+

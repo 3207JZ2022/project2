@@ -1,0 +1,65 @@
+<div class="search-component">
+    <app-loading-spinner class="loading-spinner" *ngIf="isFetching"></app-loading-spinner>
+    <div class="search-header" *ngIf="!isFetching">
+        <h4 class="result-count ">
+            {{resultCount?resultCount: 'No'}} {{resultCount==1? 'result': 'results'}} for 
+            <span class="highlighted">
+                "{{search}}"
+            </span>
+        </h4> 
+        <div class="sorting ">
+            <button class="sort-btn">Sort By</button>
+            <select class="sorting-select">
+                <option value="Featured">
+                    <p>Featured</p>
+                </option>
+                <option value="Date: New to Old">
+                    <p>Date: New to Old</p>
+                </option>
+                <option value="Date: Old to New">
+                    <p>Date: Old to New</p>
+                </option>
+                <option value="Rating">
+                    <p>Rating</p>
+                </option>
+            </select>
+        </div>
+    </div>
+
+    <div class="search-body">
+        <!-- <div class="expand-btn-layout" (click)="expanded=!expanded">
+            <button class="expand-btn">
+                <fa-icon  [icon]="faBars" ></fa-icon>
+            </button>
+        </div> -->
+        <!-- <div class="search-filter-layout "  [ngClass]="expanded? 'expanded':'collapsed'"> -->
+            <!-- <app-search-filter></app-search-filter> -->
+        <!-- </div> -->
+    
+        <div class="search-result">
+
+            <ul class="search-result-list" >
+                <li class="search-result-item" *ngFor="let vid of videos; let i = index">
+                    <app-video-detail
+                        [video]="vid"
+                    >
+                    </app-video-detail>
+                </li>
+            </ul>
+
+            <div class="page-control">
+                <app-page-control *ngIf="resultCount" 
+                [itemNumber]="resultCount"
+                ></app-page-control>
+            </div>
+
+            
+        </div>
+    
+
+    </div>
+    
+
+
+
+</div>

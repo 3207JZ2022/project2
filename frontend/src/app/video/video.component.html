@@ -1,0 +1,17 @@
+<div class="video-component">
+    
+    <div class="video-layout" [style]="videoLayoutStyle">
+        <app-player [playerHeight]="playerHeight" [playerWidth]="playerWidth" *ngIf="video"
+            [videoTitle]="video.name" [videoDescription]="video.description"
+            [tags]="video.tag" [episodes]="video.episodes"
+
+        ></app-player>
+        <div class="recommend-section" *ngIf="cards.length">
+            <app-cards-slider [vertical]="isVertical" [sliderHeight]="playerHeight"
+            [unprocessedItems]="cards" [bindFunction]="navToVideo"
+            ></app-cards-slider>
+        </div>
+    
+    </div>
+
+</div>

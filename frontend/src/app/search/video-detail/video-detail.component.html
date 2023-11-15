@@ -1,0 +1,24 @@
+<div class="video-detail-component" *ngIf="video">
+    <img [src]="video.imgSrc" class="video-detail-img" (click)="navToVideo()">
+    <div class="video-text-area">
+
+        <p class="video-detail-name" (click)="navToVideo()" >{{video.name}}</p>
+        <p class="video-detail-description">{{video.description}}</p>
+
+        <!-- <div class="rating-area">
+            <app-rating-star [rating]="rating">
+            </app-rating-star>
+        </div> -->
+        <!-- <div class="text-area-footer">
+            <h5 class="review-count">{{reviewCount}} {{reviewCount!=1? 'Reviews':'Review'}}</h5>
+            <p class="product-detail-price">${{product.price}}</p>
+        </div> -->
+
+
+
+    </div>
+    <div class="btn-layout">
+        <button class="nav-btn" (click)="navToVideo()">Watch</button>
+    </div>
+
+</div>

@@ -1,0 +1,8 @@
+<div class="app-component">
+  <app-header *ngIf="!isFullscreen"></app-header>
+
+  <router-outlet>
+  </router-outlet>
+
+  <app-footer *ngIf="!isFullscreen"></app-footer>
+</div>

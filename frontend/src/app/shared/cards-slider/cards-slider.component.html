@@ -1,0 +1,48 @@
+<div class="cards-slider-component">
+    <!-- horizontal controller -->
+    <button class="left-btn control-btn" *ngIf="!vertical"
+        [style]="horizontalControlBtnStyle"
+        (click)="slideLeft()">
+        &#x2039;
+    </button>
+    <button class="right-btn control-btn" *ngIf="!vertical"
+        [style]="horizontalControlBtnStyle"
+        (click)="slideRight()">
+        &#x203A;
+    </button>
+    <!-- vertical controller -->
+    <!-- <button class="up-btn control-btn" *ngIf="vertical"
+        [style]="verticalControlBtnStyle"
+        (click)="slideUp()">
+        &#x2039;
+    </button>
+    <button class="down-btn control-btn" *ngIf="vertical"
+        [style]="verticalControlBtnStyle"
+        (click)="slideDown()">
+        &#x203A;
+    </button> -->
+    <button class="up-btn control-btn" *ngIf="vertical"
+        [style]="verticalControlBtnStyle"
+        (click)="slideUp()">
+        <p class="rotate-arrow">
+            &#x2039;
+        </p>
+    </button>
+    <button class="down-btn control-btn" *ngIf="vertical"
+        [style]="verticalControlBtnStyle"
+        (click)="slideDown()">
+        <p class="rotate-arrow">
+            &#x203A; 
+        </p>
+    </button>
+    <ul class="cards-list" #listRef [ngClass]="vertical? 'flex-down':''" [ngStyle]="sliderStyle">
+        
+        <li *ngFor="let item of items" class="cards-list-item">
+            <app-card [bindFunction]="bindFunction"
+                [item]="item"
+            ></app-card>
+        </li>
+
+    </ul>
+
+</div>

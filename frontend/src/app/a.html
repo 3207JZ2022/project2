@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+  html {
+    scroll-behavior: smooth;
+  }
+		.f{
+			height: 200vh;
+		}
+	</style>
+</head>
+
+<body>	
+	<button class="s">ccc</button>
+	<div class="f">
+		a
+
+	</div>
+	
+	<script>
+		let btn = document.querySelector(".s");
+		console.log(btn);
+		// btn.addEventListener("click",()=>{window.scrollBy({
+		// 	top:300,
+		// 	behavior: "smooth",
+		// })})
+        btn.onclick=()=>{
+            window.scrollBy({
+                top:300,
+                bahavior:'smooth'
+            })
+        }
+	</script>
+</body>
+	
+</html>

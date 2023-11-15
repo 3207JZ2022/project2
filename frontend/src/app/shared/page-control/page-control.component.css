@@ -1,0 +1,58 @@
+.page-control-component{
+    user-select: none;
+}
+
+.btn-list{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    max-height: 90px;
+    overflow-y: auto;
+}
+
+li{
+    list-style: none;
+    padding: 3px;
+    margin: 2px;
+}
+
+li .page-btn{
+    /* border-radius:1px; */
+    width: 40px;
+    height: 40px;
+}
+
+.page-btn button{
+    border-radius: 4px;
+    border: 0.5px solid #d46c6c;
+    width: 35px;
+    height: 35px;
+    opacity: 0.8;
+}
+
+.control-btn{
+    width:fit-content;
+    border-radius: 2px;
+
+}
+
+.page-btn .selected{
+    /* border-radius: 2px; */
+    /* width: 37px; */
+    /* height: 37px; */
+    border: 0.5px solid #910000b0;
+    /* font-size: 21px; */
+    transform: scale(1.2);
+    opacity: 1;
+    
+}
+
+.selected::after{
+    content: "";
+    border-right:1px #2b2b2b;
+}
+
+
+ol, ul {
+    padding-left: 0px;
+}

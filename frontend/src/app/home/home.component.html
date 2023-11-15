@@ -1,0 +1,19 @@
+<div class="home-component">
+    <app-carousel *ngIf="carousel.length>0" [unprocessedItems]="carousel" 
+        [thumbsList]="false" [autoPlay]="false"
+        [bindFunction]="navToVideo"
+        >
+
+    </app-carousel>
+    
+    <app-cards-slider *ngIf="cards.length>0" [unprocessedItems]="cards"
+        [bindFunction]="navToVideo"
+        >
+  
+    </app-cards-slider>
+    <!-- <img src="http://localhost:8080/cover"> -->
+    <!-- <video controls>
+        <source src="http://localhost:8080/videoStream"  type="video/mp4">
+    </video>
+    <app-player [videoInput]="test" ></app-player> -->
+</div>

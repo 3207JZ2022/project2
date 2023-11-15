@@ -1,0 +1,100 @@
+<div class="carousel-container" [style]="carouselContainerStyle" 
+*ngIf="unprocessedItems&&unprocessedItems.length">
+
+    <div class="carousel-main"  
+    [style]="carouselDisplayStyle">
+
+        <div class="carousel-display" 
+        [style]="carouselDisplayStyle"
+        #displayRef>
+
+            <button class="prev-btn control-btn" 
+                *ngIf="controlBtn"
+                [style]="leftCtrlStyle"
+                (click)="selectPrev()">
+                &#9664;
+            </button>
+            <button class="next-btn control-btn" 
+                *ngIf="controlBtn"
+                [style]="rightCtrlStyle"
+                (click)="selectNext()">
+                &#9654;
+            </button>
+            <div class="carousel-img-list"  
+            (click)="bindFunction(items[selectedIndex].id)"
+
+            [style]="carouselImgStyle">
+                <img class="carousel-img" 
+
+                [style]="carouselImgStyle"
+                [@divState]="{value:state, 
+                    params:{
+                        time:transitionDuration, 
+                        halfTime:transitionDuration/2,
+                        translateX: width
+                    }}"
+                [src]="items[selectedIndexN].imgSrc">
+
+                <img class="carousel-img " 
+                [style]="carouselImgStyle"
+                [@divState]="{value:state, 
+                    params:{
+                        time:transitionDuration, 
+                        halfTime:transitionDuration/2,
+                        translateX: width
+                    }}"
+
+                [src]="items[selectedIndex].imgSrc">
+
+
+
+                <img class="carousel-img " 
+                [style]="carouselImgStyle"
+                [@divState]="{value:state, 
+                    params:{
+                        time:transitionDuration, 
+                        halfTime:transitionDuration/2,
+                        translateX: width
+                    }}"
+                    [src]="items[selectedIndexP].imgSrc">
+                
+
+            </div>
+
+        </div>
+        <div class="carousel-control" [style]="carouselDisplayStyle">
+            <div class="carousel-text" >
+                <p class="carousel-title" [ngClass]="{'hidden': !title}">
+                    {{items[selectedIndex].title}}
+                </p>
+            </div>
+            <div class="dots" style="text-align:center" *ngIf="indexDots" >
+                <span class="dot"
+                *ngFor="let item of items; let index = index"
+                [ngClass]="{'selected': selectedIndex==index}"
+                 (click)="selectItem1(index)"
+                 >
+                </span>
+            </div> 
+        </div>
+    </div>
+    <div class="carousel-sub" [style]="carouselSubStyle" *ngIf="thumbsList">
+        <ul class="carousel-thumbs" 
+        [@scrollState]="{value:thumbState, 
+            params:{
+                time:transitionDuration, 
+                halfTime:transitionDuration/2,
+                transform: ( selectedIndex*(thumbWidth+3) + width  < listLength  ? (thumbWidth + 3)*selectedIndex : listLength-width)
+            }}"
+
+        id="selectedIndex" #listRef>
+
+            <li class="carousel-thumb" *ngFor="let item of items; let index = index"
+            [ngClass]="{'selected': selectedIndex==index}"
+            id="{{selectedIndex==index? 'selected':''}}"
+             (click)="selectItem(index,$event)">
+                <img [src]="item.imgSrc">
+            </li>
+        </ul>
+    </div>
+</div>
